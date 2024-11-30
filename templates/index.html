@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IRR Calculator</title>
+</head>
+<body>
+    <h1>IRR Calculator</h1>
+    <form method="POST">
+        <label for="cash_outflow">Annual Cash Outflow (negative):</label><br>
+        <input type="text" id="cash_outflow" name="cash_outflow" required><br><br>
+        
+        <label for="time">Duration in Years:</label><br>
+        <input type="text" id="time" name="time" required><br><br>
+        
+        <label for="cash_inflow">Cash Inflow (positive):</label><br>
+        <input type="text" id="cash_inflow" name="cash_inflow" required><br><br>
+        
+        <button type="submit">Calculate IRR</button>
+    </form>
+
+    {% if result %}
+        <h2>{{ result }}</h2>
+    {% elif error %}
+        <h2 style="color: red;">{{ error }}</h2>
+    {% endif %}
+</body>
+</html>
